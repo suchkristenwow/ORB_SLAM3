@@ -33,12 +33,9 @@ endif()
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
-find_package(OpenCV 4.0)
+find_package(OpenCV 3.0)
 if(NOT OpenCV_FOUND)
-  find_package(OpenCV 3.0)
-  if(NOT OpenCV_FOUND)
-    message(FATAL_ERROR "OpenCV > 3.0 not found.")
-  endif()
+  message(FATAL_ERROR "OpenCV > 3.0 not found.")
 endif()
 
 MESSAGE("OPENCV VERSION:")
@@ -54,6 +51,7 @@ ${PROJECT_SOURCE_DIR}/include
 ${PROJECT_SOURCE_DIR}/include/CameraModels
 ${EIGEN3_INCLUDE_DIR}
 ${Pangolin_INCLUDE_DIRS}
+/home/nvidia/restorecart_ws/src/ORB_SLAM3/Thirdparty/g2o
 )
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
